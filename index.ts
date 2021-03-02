@@ -33,20 +33,16 @@ window.addEventListener('load', () => {
     history.replaceState({ page: 0 }, '');
 });
 
-let old = 0;
 window.onpopstate = function({ state }) {
     clickChoice(state.page, false);
-    // old = state.page
 }
 
 
 function clickChoice(x: number, historyMod = true) {
     textArea.innerHTML = json[x].text;
     if(historyMod) {
-        console.log(old);
-        history.pushState({ page: old }, json[x].text, '#');
+        history.pushState({ page: x }, json[x].text, '#');
     }
-    old = x;
     if(json[x].isEnd) {
         choicesList.innerHTML = `<button onclick="window.location.reload(true)">Reload</button>`;
         return;
