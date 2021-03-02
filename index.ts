@@ -38,8 +38,8 @@ window.addEventListener('load', () => {
 
 let old = 0;
 window.onpopstate = function({ state }) {
-    clickChoice(state.page, false);
-    old = state.page
+    // clickChoice(state.page, false);
+    // old = state.page
 }
 
 
