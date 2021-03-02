@@ -34,18 +34,19 @@ window.addEventListener('load', () => {
     // choicesList.innerHTML = choicesText;
     // textArea.innerHTML = json[0].text;
     clickChoice(0, false);
+    history.replaceState({ page: 0 }, '');
 });
 
 let old = 0;
 window.onpopstate = function({ state }) {
-    // clickChoice(state.page, false);
+    clickChoice(state.page, false);
     // old = state.page
 }
 
 
 function clickChoice(x: number, historyMod = true) {
     textArea.innerHTML = json[x].text;
-    if(historyMod) history.pushState({ page: old }, json[x].text);
+    if(historyMod) history.pushState({ page: old }, json[x].text, '#');
     old = x;
     if(json[x].isEnd) {
         choicesList.innerHTML = `<button onclick="window.location.reload(true)">Reload</button>`;
