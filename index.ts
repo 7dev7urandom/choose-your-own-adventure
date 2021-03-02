@@ -1,8 +1,8 @@
 const jsonReq = new XMLHttpRequest();
 jsonReq.open("GET", 'data.json', false);
-// jsonReq.send();
-// const json = JSON.parse(jsonReq.responseText);
-const json = [
+jsonReq.send();
+const json = JSON.parse(jsonReq.responseText);
+const dev = [
     {
         text: "Choice 1",
         choices: [
