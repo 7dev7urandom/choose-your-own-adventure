@@ -1,6 +1,6 @@
 const jsonReq = new XMLHttpRequest();
 jsonReq.open("GET", 'data.json', false);
-// jsonReq.send();
+jsonReq.send();
 const dev = [
     {
         text: "Choice 1",
@@ -21,7 +21,7 @@ const dev = [
         isEnd: true
     }
 ];
-const json = dev;//JSON.parse(jsonReq.responseText);
+const json = JSON.parse(jsonReq.responseText);
 
 var textArea;
 var choicesList;
