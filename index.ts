@@ -26,13 +26,9 @@ const json = JSON.parse(jsonReq.responseText);
 var textArea;
 var choicesList;
 window.addEventListener('load', () => {
-    console.log('dont');
     textArea = document.getElementById('textarea');
     choicesList = document.getElementById('choices');
 
-    // const choicesText = (json[0].choices as Array<[string, number]>).map(x => `<button onclick="clickChoice(${x[1]})">${x[0]}</button>`).join();
-    // choicesList.innerHTML = choicesText;
-    // textArea.innerHTML = json[0].text;
     clickChoice(0, false);
     history.replaceState({ page: 0 }, '');
 });
@@ -46,7 +42,10 @@ window.onpopstate = function({ state }) {
 
 function clickChoice(x: number, historyMod = true) {
     textArea.innerHTML = json[x].text;
-    if(historyMod) history.pushState({ page: old }, json[x].text, '#');
+    if(historyMod) {
+        console.log(old);
+        history.pushState({ page: old }, json[x].text, '#');
+    }
     old = x;
     if(json[x].isEnd) {
         choicesList.innerHTML = `<button onclick="window.location.reload(true)">Reload</button>`;
