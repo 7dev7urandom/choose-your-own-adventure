@@ -32,11 +32,14 @@ window.addEventListener('load', () => {
     // const choicesText = (json[0].choices as Array<[string, number]>).map(x => `<button onclick="clickChoice(${x[1]})">${x[0]}</button>`).join();
     // choicesList.innerHTML = choicesText;
     // textArea.innerHTML = json[0].text;
-    clickChoice(0);
+    clickChoice(0, false);
 });
 
+window.onpopstate = function({ state }) {
+    clickChoice(state.page, false);
+}
 
-function clickChoice(x: number) {
+function clickChoice(x: number, historyMod = true) {
     textArea.innerHTML = json[x].text;
     if(json[x].isEnd) {
         choicesList.outerHTML = `<button onclick="window.location.reload(true)">Reload</button>`;
@@ -44,4 +47,6 @@ function clickChoice(x: number) {
     }
     const choicesText = (json[x].choices as Array<[string, number]>).map(x => `<li><button onclick="clickChoice(${x[1]})">${x[0]}</button></li>`).join('');
     choicesList.innerHTML = choicesText;
+
+    if(historyMod) history.pushState({ page: x }, json[x].text);
 }
