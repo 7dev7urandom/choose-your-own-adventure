@@ -1,45 +1,45 @@
 [
-    { // 0
+    {
         "text": "Does the object have cells?",
         "choices": [
             ["Yes", 1],
             ["No", 2]
         ]
     },
-    { // 1
+    {
         "text": "Are the cells membrane-bound?",
         "choices": [
             ["Yes", 5],
             ["No", 11]
         ]
     },
-    { // 2
+    {
         "text": "Does the object contain strands of DNA?",
         "choices": [
             ["Yes", 3],
             ["No", 4]
         ]
     },
-    { // 3
+    {
         "text": "The object is likely a virus, but it is definitely not alive.",
         "isEnd": true
     },
-    { // 4
+    {
         "text": "The object is not alive and does not fit the classification of living things. It could possibly be a table.",
         "isEnd": true
     },
-    { // 5
+    {
         "text": "Does the organism have organs?",
         "choices": [
             ["Yes", 7],
             ["No", 6]
         ]
     },
-    { // 6
+    {
         "text": "Domain: Eukarya<br>Kingdom: Protista",
         "isEnd": true
     },
-    { // 7
+    {
         "text": "Describe the cell wall of the organism.",
         "choices": [
             ["No cell wall", 8],
@@ -47,30 +47,30 @@
             ["Cell wall made of cellulose", 10]
         ]
     },
-    { // 8
+    {
         "text": "Domain: Eukarya<br>Kingdom: Animalia",
         "isEnd": true
     },
-    { // 9
+    {
         "text": "Domain: Eukarya<br>Kingdom: Fungi",
         "isEnd": true
     },
-    { // 10
+    {
         "text": "Domain: Eukarya<br>Kingdom: Plantae",
         "isEnd": true
     },
-    { // 11
+    {
         "text": "Do the cell walls contain peptidoglycan?",
         "choices": [
             ["Yes", 12],
             ["No", 13]
         ]
     },
-    { // 12
+    {
         "text": "Domain: Prokaryote<br>Kingdom: Bacteria",
         "isEnd": true
     },
-    { // 13
+    {
         "text": "Domain: Prokaryote<br>Kingdom: Archea",
         "isEnd": true
     }
